@@ -1,5 +1,6 @@
-const express = require('express');
-const app = express();
+// index js should be very simple 
+
+const app = require('./app')
 const PORT = 3000;
 //server listen
 app.listen(PORT, ()=>{
