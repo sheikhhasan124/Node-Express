@@ -10,4 +10,5 @@ app.listen(PORT, ()=>{
 
 "start": "nodemon index.js"
 ```
-
+![sf](./img/httpmethod.PNG)  
+![sdf](./img/restfull%20api.PNG)
