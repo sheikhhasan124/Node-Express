@@ -12,3 +12,6 @@ app.listen(PORT, ()=>{
 ```
 ![sf](./img/httpmethod.PNG)  
 ![sdf](./img/restfull%20api.PNG)
+
+<hr>
+
