@@ -27,7 +27,7 @@ const PORT = 3000;
 })
  */
 // requist with json data / form data parameter 
-const bodyParser = require("body-parser");
+/* const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -35,6 +35,21 @@ app.post("/user",(req,res)=>{
  const name = req.body.name;
  const age = req.body.age;
  res.send(`student name is ${name} and age is ${age}`)
+}) */
+// requist post form data parameter 
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.get("/register",(req,res)=>{
+   res.sendFile(__dirname+"/index.html") 
+})
+
+app.post("/register",(req,res)=>{
+   const fullName = req.body.fullName;
+   const age = req.body.age;
+res.send(`<h2>my name is ${fullName} and age${age}</h2>`) 
+
 })
 
 
