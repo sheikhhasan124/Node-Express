@@ -5,21 +5,19 @@ app.get("/",(req,res)=>{
     res.send("i'm get requiest");
     res.end();
 });
-app.get("/about",(req,res)=>{
-    res.send("i'm get requiest at about");
+app.get("/resister",(req,res)=>{
+    res.send("i'm get resister requiest");
     res.end();
 });
-app.post("/",(req,res)=>{
-    res.send("i'm post requiest ");
+app.get("/login",(req,res)=>{
+    res.send("i'm get login requiest");
     res.end();
 });
-app.put("/",(req,res)=>{
-    res.send("i'm post requiest ");
-    res.end();
-});
-app.delete("/",(req,res)=>{
-    res.send("i'm post requiest ")
-    res.end();
-});
+
+// wrong url message 
+app.use((req,res)=>{
+    res.send("404")
+})
+
 
 module.exports = app;
