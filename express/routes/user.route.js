@@ -1,3 +1,12 @@
+const express = require('express');
+const router = express.Router();
+
+router.get("/serve",(req,res)=>{
+    res.send("i'm serve page")
+  
+})
+
+module.exports = router;
 // const express = require('express');
 // const { mountpath } = require('../app');
 // const router = express.Router()

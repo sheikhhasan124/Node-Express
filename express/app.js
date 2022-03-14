@@ -1,5 +1,9 @@
 const express = require('express');
 const app = express();
+const userRouter=require("./routes/user.route")
+
+// app.use("/api/user",userRouter);
+app.use(userRouter);
 
 
 //home route
@@ -13,6 +17,12 @@ app.get("/contact",(req,res)=>{
     res.statusCode=200;
     res.sendFile(__dirname+"/views/contact.html")
 })
+app.use("/login",(req,res)=>{
+    // res.cookie("name","hasan")
+    res.clearCookie("name")
+    res.append("id", 122222)
+    res.end();
+})
 
 // wrong url message 
 app.use((req,res)=>{
@@ -22,10 +32,6 @@ app.use((req,res)=>{
 
 module.exports = app;
 
-
-
-// const userRouter = require("./routes/user-route");
-// app.use("/api/user",userRouter);
 
 
 
