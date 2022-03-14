@@ -50,3 +50,15 @@ app.use((req,res)=>{
 })
 
 ```
+
+### query parameter  
+```
+app.get("/",(req,res)=>{
+    // res.send("im home")
+    const id = req.query.id;
+    res.send(`student id is ${id}`)
+})
+```
+### Route parameter  
+
+### requist header  
