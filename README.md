@@ -97,3 +97,42 @@ app.post("/user",(req,res)=>{
 
 
 ```
+
+### form data from fornt end to server then res  
+```
+//html
+ <h1>resister form</h1>
+    <form action="/register" method="POST">
+    <div>
+        <label for="fullName">Full Name</label>
+        <input type="text" name="fullName" id="fullName">
+    </div>
+    <div>
+        <label for="age">age</label>
+        <input type="text" name="age" id="age">
+    </div>
+    <button type="submit">submit</button>
+    </form>
+
+
+
+
+
+//js
+// requist post form data parameter 
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.get("/register",(req,res)=>{
+   res.sendFile(__dirname+"/index.html") 
+})
+
+app.post("/register",(req,res)=>{
+   const fullName = req.body.fullName;
+   const age = req.body.age;
+res.send(`<h2>my name is ${fullName} and age${age}</h2>`) 
+
+})
+
+```
