@@ -15,3 +15,38 @@ app.listen(PORT, ()=>{
 
 <hr>
 
+### response json data, redirect  
+```
+router.get("/resister",(req,res)=>{
+  /*   res.status(200).json({
+        "name":"anisul",
+        "message":"i am resister",
+        statusCode:200,
+        }) */
+
+   /*  res.send("i'm get resister requiest");
+    res.end(); */
+
+    res.redirect("/login")
+});
+```
+### response html file  
+```
+//home route
+app.get("/",(req,res)=>{
+    // res.send("i'm home page")
+    res.statusCode=200;
+    res.sendFile(__dirname+"/views/index.html")
+})
+app.get("/contact",(req,res)=>{
+    // res.send("i'm contact page")
+    res.statusCode=200;
+    res.sendFile(__dirname+"/views/contact.html")
+})
+
+// wrong url message 
+app.use((req,res)=>{
+    res.sendFile(__dirname+"/views/err.html")
+})
+
+```
