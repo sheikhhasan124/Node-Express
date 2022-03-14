@@ -51,7 +51,7 @@ app.use((req,res)=>{
 
 ```
 
-### query parameter  
+### query with parameter  
 ```
 app.get("/",(req,res)=>{
     // res.send("im home")
@@ -59,7 +59,7 @@ app.get("/",(req,res)=>{
     res.send(`student id is ${id}`)
 })
 ```
-### Route parameter  
+### Route with parameter  
 ```
 app.get("/userId/:id/age/:age",(req,res)=>{
     // res.send("im home")
@@ -68,7 +68,7 @@ app.get("/userId/:id/age/:age",(req,res)=>{
     res.send(`student id is ${id} and ${age}`)
 })
 ```
-### requist header  
+### requist with header  
 
 ```
 app.get("/",(req,res)=>{
@@ -77,5 +77,23 @@ app.get("/",(req,res)=>{
     const name = req.header('name');
     res.send(`student id is ${id} and name ${name}`)
 })
+
+```
+
+## body parser  
+### requiest with json  
+
+```
+// requist with json data / form data parameter 
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.post("/user",(req,res)=>{
+ const name = req.body.name;
+ const age = req.body.age;
+ res.send(`student name is ${name} and age is ${age}`)
+})
+
 
 ```
